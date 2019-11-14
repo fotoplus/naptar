@@ -20,7 +20,7 @@ if ($handle = opendir($dir)) {
 
             echo (
               '<div class="col-sm-6 col-md-4 col-lg-3 gallery_album">'.chr(13)
-                .'<a href="'.$remote_path.$file.'" class="wbGallery_image" data-wbgallery-albumtitle="Naptárminták" data-wbgallery-title="sheet-001.jpg" data-wbgallery-original="'.$remote_path.$file.'" data-wbgallery-large="'.$remote_path.$file.'" data-wbgallery-thumb="'.$remote_path.'_medium/'.$file.'" target="_blank">'.chr(13)
+                .'<a href="'.$remote_path.$file.'" class="wbGallery_image" data-wbgallery-albumtitle="Naptárminták" data-wbgallery-title="sheet-001.jpg" data-wbgallery-original="'.$remote_path.$file.'" data-wbgallery-large="'.$remote_path.$file.'" data-wbgallery-thumb="'.$remote_path.'_medium/'.$file.'" data-lightbox="lightbox_" target="_blank">'.chr(13)
                 .'<img src="'.$remote_path.'_th/'.$file.'" alt="'.$template.'">'.chr(13)
                 .'</a>'.chr(13)
                 .'<form style="clear:both;" method="POST" type="multipart/form-data" action="'.$form_action_target.'">'.chr(13)
