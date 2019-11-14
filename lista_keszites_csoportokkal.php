@@ -13,6 +13,7 @@ include('kozos.inc.php');
 
 
 if ($handle = opendir($dir)) {
+    echo ('<div id="lightGallery">').chr(13);
     $i=0;
     while (false !== ($group = readdir($handle))) {
       if ($group != "." && $group != "..") {
@@ -20,7 +21,6 @@ if ($handle = opendir($dir)) {
         echo(
           '<!-- '.$group.' -->'.chr(13)
           .'<div class="row" id="'.$group.'">'.chr(13)
-          .'<div  id="lightGallery">'.chr(13)
         );
 
         $group_dir=$dir.'/'.$group;
@@ -59,7 +59,7 @@ if ($handle = opendir($dir)) {
 
         // Az egymásmellé rendezés megszüntetése
         echo (
-          '<div class="clear"></div></div>'.chr(13)
+          '<div class="clear"></div>'.chr(13)
           .'<!-- / '.$group.' -->'.chr(13)
           .chr(13)
         );
@@ -67,6 +67,7 @@ if ($handle = opendir($dir)) {
 
     }
     closedir($handle);
+    echo ('</div>').chr(13);
 }
 
 
