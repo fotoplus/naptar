@@ -10,7 +10,7 @@ $remote_path="https://keprendeles.fotoplus.hu/public/upload/naptarkepek/2020/12_
 include('kozos.inc.php');
 
 
-echo('<div class="row">').chr(13);
+echo('<div class="row" id="lightGallery">').chr(13);
 if ($handle = opendir($dir)) {
 
     while (false !== ($file = readdir($handle))) {
