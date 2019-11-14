@@ -9,7 +9,7 @@ Use folder name as category and groupping images.
 
 ---
 
-HTML forráskód generálására a fotoplus.hu on-line naptárrendelési felületéhez naptárminta kiválasztásához.
+HTML forráskód generálására a keprendeles.fotoplus.hu on-line naptárrendelési felületéhez naptárminta kiválasztásához.
 
 
 A PHP-t futtató számítógép adott mappáját alapulvéve készít képgalériát. A *lista_keszites.php* egy oldalas mintáknál használható, ahol minden egyes kép egy külön választható minta.
