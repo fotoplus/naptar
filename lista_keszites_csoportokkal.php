@@ -5,17 +5,22 @@
 
 // A HTML kódba begyazandó távoli elérési út, ahova a fájlok fel lesznek töltve, a végén / -el!
 $remote_path="https://keprendeles.fotoplus.hu/public/upload/naptarkepek/2020/1_honapos/";
-
+#$remote_path="https://keprendeles.fotoplus.hu/public/upload/naptarkepek/2020/2_honapos/";
+#$remote_path="https://keprendeles.fotoplus.hu/public/upload/naptarkepek/2020/3_honapos/";
+#$remote_path="https://keprendeles.fotoplus.hu/public/upload/naptarkepek/2020/12_honapos/";
 
 include('kozos.inc.php');
 
 
 if ($handle = opendir($dir)) {
-
+    $i=0;
     while (false !== ($group = readdir($handle))) {
       if ($group != "." && $group != "..") {
-
-        echo('<div class="row">'.chr(13));
+        $i++;
+        echo(
+          '<!-- '.$group.' -->'.chr(13)
+          .'<div class="row" id="'.$group.'">'.chr(13)
+        );
 
         $group_dir=$dir.'/'.$group;
         if ($group_handle = opendir($group_dir)) {
@@ -27,7 +32,7 @@ if ($handle = opendir($dir)) {
 
               echo (
                 '<div class="col-sm-6 col-md-4 col-lg-3 gallery_album">'.chr(13)
-                  .'<a href="'.$remote_path.$file.'" class="wbGallery_image" data-wbgallery-albumtitle="Naptárminták" data-wbgallery-title="sheet-001.jpg" data-wbgallery-original="'.$remote_path.$file.'" data-wbgallery-large="'.$remote_path.$file.'" data-wbgallery-thumb="'.$remote_path.'_medium/'.$file.'" target="_blank">'.chr(13)
+                  .'<a href="'.$remote_path.$file.'" class="wbGallery_image" data-wbgallery-albumtitle="Naptárminták" data-wbgallery-title="'. $group.'" data-wbgallery-original="'.$remote_path.$file.'" data-wbgallery-large="'.$remote_path.$file.'" data-wbgallery-thumb="'.$remote_path.'_medium/'.$file.'" data-lightbox="lightbox_'.$i.'" target="_blank">'.chr(13)
                   .'<img src="'.$remote_path.'_th/'.$file.'" alt="'.$template.'">'.chr(13)
                   .'</a>'.chr(13)
                 .'</div>'.chr(13)
@@ -52,11 +57,18 @@ if ($handle = opendir($dir)) {
         );
 
         // Az egymásmellé rendezés megszüntetése
-        echo ('<div class="clear"></div>').chr(13);
+        echo (
+          '<div class="clear"></div>'.chr(13)
+          .'<!-- / '.$group.' -->'.chr(13)
+          .chr(13)
+        );
       }
 
     }
     closedir($handle);
 }
+
+
+
 
 ?>
