@@ -17,10 +17,9 @@ A *lista_keszites_csoportokkal.php* esetében pedig a több oldalas naptárakhoz
 helyezzük el a képeket, melysket mappánként csoportositva jelenit meg, és ezeket a csoportokat lehet kiválasztani.
 
 
-**Elnevezés**
+**Elnevezés:**
 
   Egyoldalas és többoldlas minták esetében is a fájlnév neve megegyezik a minta számával: [kollekció]-[minta]
   *Pl.: 01-023*
-
   Többoldalas minták esetében a mappa neve megegyezik a minta számával: [kollekció]-[első minta]-[utolsó minta]
   *Pl.: 07-001-012*
