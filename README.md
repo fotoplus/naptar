@@ -23,3 +23,9 @@ helyezzük el a képeket, melysket mappánként csoportositva jelenit meg, és e
   *Pl.: 01-023*
   Többoldalas minták esetében a mappa neve megegyezik a minta számával: [kollekció]-[első minta]-[utolsó minta]
   *Pl.: 07-001-012*
+
+---
+
+Nem rendelkezik grafikus felülettel! A használat során a forráskód módosítása szükséges.
+
+A PHP fájlok a ?raw kérés esetén sima szöveges formában jelenítik meg a kimenetet.
