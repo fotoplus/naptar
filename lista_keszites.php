@@ -4,7 +4,7 @@
  */
 
 // A HTML kódba begyazandó távoli elérési út, ahova a fájlok fel lesznek töltve, a végén / -el!
-$remote_path="https://keprendeles.fotoplus.hu/public/upload/naptarkepek/2020/12_honapos/";
+$remote_path="https://keprendeles.fotoplus.hu/public/upload/naptarkepek/2023/12_lapos/";
 
 
 include('kozos.inc.php');
@@ -24,7 +24,7 @@ if ($handle = opendir($dir)) {
                 .'<img src="'.$remote_path.'_th/'.strtolower($file).'" alt="'.$template.'">'.chr(13)
                 .'</a>'.chr(13)
                 .'<form style="clear:both;" method="POST" type="multipart/form-data" action="'.$form_action_target.'">'.chr(13)
-                  .'<textarea style="display:none;" name="note" id="ProductNote">Minta: '.$template.'&#13;&#10;Méret:&#13;&#10;Darabszám: 1db&#13;&#10;</textarea>'.chr(13)
+                  .'<textarea style="display:none;" name="note" id="ProductNote">Minta: '.$template.'&#13;&#10;Méret: '.substr($template, -4, 2).'x'.substr($template, -2)'&#13;&#10;Darabszám: 1db&#13;&#10;</textarea>'.chr(13)
                   .'<input type="hidden" name="product" value="Naptár: '.$template.'" />'.chr(13)
                   .'<div style="width:100%; background-color:#000000; color: #FFFFFF; font-weight:bold; padding:3px 3px 3px 5px; margin-top:5px;">'.chr(13)
                     .'<div style="display:inline-block;">'.$template.'</div>'.chr(13)
