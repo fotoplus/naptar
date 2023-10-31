@@ -1,31 +1,37 @@
 # naptar
 
+HTML forráskód generálására a galéria alapú rendelési űrlapokhoz fájllista alapján.
+A mappa nevét kategóriaként és a képeket csoportosítva jeleníti meg.
 
-Generate HTML source code for gallery based ordering form by file list.
-Use folder name as category and groupping images.
-
-- Non recursive file listing
-- Show only jpg files
-
----
-
-HTML forráskód generálására a keprendeles.fotoplus.hu on-line naptárrendelési felületéhez naptárminta kiválasztásához.
-
-
-A PHP-t futtató számítógép adott mappáját alapulvéve készít képgalériát. A *lista_keszites.php* egy oldalas mintáknál használható, ahol minden egyes kép egy külön választható minta.
-A *lista_keszites_csoportokkal.php* esetében pedig a több oldalas naptárakhoz készíthetünk listát. Itt alpakkában 
-helyezzük el a képeket, melysket mappánként csoportositva jelenit meg, és ezeket a csoportokat lehet kiválasztani.
-
-
-**Elnevezés:**
-
-  Egyoldalas és többoldlas minták esetében is a fájlnév neve megegyezik a minta számával: [kollekció]-[minta]
-  *Pl.: 01-023*
-  Többoldalas minták esetében a mappa neve megegyezik a minta számával: [kollekció]-[első minta]-[utolsó minta]
-  *Pl.: 07-001-012*
+- Nem rekurzív fájl lista
+- Csak jpg fájlok megjelenítése
 
 ---
 
-Nem rendelkezik grafikus felülettel! A használat során a forráskód módosítása szükséges.
+## Rövid leírás
 
-A PHP fájlok a ?raw kérés esetén sima szöveges formában jelenítik meg a kimenetet.
+Ez a projekt lehetővé teszi HTML forráskód generálását a keprendeles.fotoplus.hu online naptárrendelési felületén történő naptárminta kiválasztásához. Az alkalmazás egy mappa struktúrát használ, és a képeket kategóriákba és csoportokba szervezi, így könnyen elérhetővé válnak az online rendeléshez.
+
+Egyoldalas minták esetében a fájlnevek tartalmazzák a minta azonosítóját, például "[kollekció]-[minta]" formában (pl.: 01-023). Többoldalas minták esetében a mappanevek tartalmazzák a minta azonosítóját "[kollekció]-[első minta]-[utolsó minta]" formában (pl.: 07-001-012).
+
+A kód automatikusan generál egy előnézeti képgalériát, valamint kinyeri a képek elérési útjait és egyéb információkat, amelyeket fel lehet használni a rendelési űrlap kitöltéséhez. A generált HTML forráskódot használhatja a naptárminta választáshoz.
+
+## Használati utasítások
+
+1. Helyezze el a képeket a "mappa" mappában. Az egyoldalas minták fájlnevei tartalmazzák a minta azonosítóját.
+2. Futtassa a "lista_keszites_cak_1-1_minta.php" fájlt a böngészőben. Ez generálja a galériát és a generált HTML forráskódot.
+3. Használja a generált HTML forráskódot a naptárminta választáshoz a keprendeles.fotoplus.hu oldalon.
+
+## Technikai követelmények
+
+- PHP telepítése a szerveren
+- A GD könyvtár telepítése a PHP-ban (a thumbnail képek generálásához)
+- Egy mappa a képeknek (a "mappa" mappában), amely tartalmazza az egyoldalas és többoldalas naptár mintákat.
+
+## Megjegyzések
+
+Ez a projekt nem rendelkezik grafikus felülettel és igényel némi technikai ismereteket a használathoz. A forráskódot a saját igényeihez igazíthatja, ha szükséges.
+
+A PHP fájlok a "?raw" kérés esetén csak a forráskódot jelenítik meg szöveges formában.
+
+Kérjük, vegye figyelembe, hogy a kód a képekkel együtt működik, és a képek helyes elrendezése a "mappa" mappában nagyon fontos a megfelelő működéshez.

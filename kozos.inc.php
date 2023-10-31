@@ -19,15 +19,16 @@ header("Pragma: no-cache");
  }
 
 // Helyi mappa, ahol a képek vannak
-$dir="mappa";
+$dir="mappa/";
 
-function isJPG ($file) {
+function isJPG($file) {
   $path_parts = pathinfo($file);
-  if($path_parts['extension']=="jpg") {
+  if (isset($path_parts['extension']) && strtolower($path_parts['extension']) == "jpg") {
     return true;
   } else {
     return false;
   }
 }
+
 
 ?>
